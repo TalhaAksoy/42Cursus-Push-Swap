@@ -6,12 +6,12 @@
 #    By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 17:01:00 by saksoy            #+#    #+#              #
-#    Updated: 2022/06/22 17:07:20 by saksoy           ###   ########.fr        #
+#    Updated: 2022/06/23 00:44:28 by saksoy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CFLAGSS = -Wall -Wextra -Werror
-SRCS = helper_func.c	main.c
+SRCS = helper_func.c	main.c	set_struct.c
 OBJS = $(SRCS:.c=.o)
 NAME = push_swap
 CC = gcc

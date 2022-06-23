@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 18:41:24 by saksoy            #+#    #+#             */
-/*   Updated: 2022/06/22 18:26:29 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/06/23 00:51:16 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,5 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	while (s2[++j])
 		str[i++] = s2[j];
 	str[i] = '\0';
-	free(s1);
 	return (str);
 }
