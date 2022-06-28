@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:35:44 by saksoy            #+#    #+#             */
-/*   Updated: 2022/06/23 00:40:04 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/06/28 19:17:59 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,16 @@ static	int	stack_len(int *a)
 	return (i);
 }
 
-void	print_stack(int *a, char stack_name)
+void	print_stack(t_swap *index)
 {
 	int	i;
 
 	i = 0;
-	while (a[i])
+	while (index->a_len - 1 >= 0)
 	{
-		printf("%c[%d] => %d\n", stack_name, i, a[i]);
-		i++;
+		printf("a[%d] => %d\n", index->a_len - 1,
+			index->stack_a[index->a_len - 1]);
+		index->a_len--;
 	}
 }
 

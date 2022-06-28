@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:00:02 by saksoy            #+#    #+#             */
-/*   Updated: 2022/06/23 00:41:21 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/06/28 19:16:42 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ t_swap	*init(char **argv)
 	arr = ft_split(str, ' ');
 	while (arr[len])
 		len++;
-	swap = malloc(sizeof(t_swap));
+	swap = ft_calloc(1, sizeof(t_swap));
 	swap->stack_a = malloc(sizeof(int) * len);
 	swap->stack_b = malloc(sizeof(int) * len);
 	swap->a_len = len;
@@ -58,7 +58,7 @@ int	main(int argc, char **argv)
 	if (argc > 2)
 	{
 		index = init(argv);
-		print_stack(index->stack_a, 'a');
+		print_stack(index);
 	}
 	else
 	{
@@ -66,7 +66,5 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	exit_swap(index);
-	print_stack(index->stack_a, 'a');
-	system("leaks push_swap");
 	return (0);
 }

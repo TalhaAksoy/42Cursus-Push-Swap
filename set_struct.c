@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 00:38:54 by saksoy            #+#    #+#             */
-/*   Updated: 2022/06/23 00:39:58 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/06/28 19:13:13 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ char	*get_argv(char **argv)
 {
 	char	**splitted;
 	char	*ret;
+	char	*old;
 	int		i;
 	int		j;
 
@@ -27,8 +28,12 @@ char	*get_argv(char **argv)
 		j = -1;
 		while (splitted[++j])
 		{
+			old = ret;
 			ret = ft_strjoin(ret, splitted[j]);
+			free(old);
+			old = ret;
 			ret = ft_strjoin(ret, " ");
+			free(old);
 		}
 		free_list(splitted);
 	}
@@ -39,13 +44,18 @@ void	set_values(char *str, t_swap *index)
 {
 	char	**spt;
 	int		i;
+	int		j;
 
 	spt = ft_split(str, ' ');
-	i = -1;
-	while (spt[++i])
+	i = 0;
+	j = 0;
+	while (spt[i])
+		i++;
+	while (spt[--i])
 	{
-		index->stack_a[i] = ft_atoi(spt[i]);
-		index->a_len += 1;
+		index->stack_a[j] = ft_atoi(spt[i]);
+		j++;
 	}
+	printf("%d a_len\n", index->a_len);
 	free_list(spt);
 }
