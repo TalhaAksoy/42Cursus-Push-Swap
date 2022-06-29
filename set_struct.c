@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 00:38:54 by saksoy            #+#    #+#             */
-/*   Updated: 2022/06/28 19:13:13 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/06/28 23:06:38 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,5 @@ void	set_values(char *str, t_swap *index)
 		index->stack_a[j] = ft_atoi(spt[i]);
 		j++;
 	}
-	printf("%d a_len\n", index->a_len);
 	free_list(spt);
 }

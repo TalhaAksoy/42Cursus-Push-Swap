@@ -6,12 +6,12 @@
 #    By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 17:01:00 by saksoy            #+#    #+#              #
-#    Updated: 2022/06/23 00:44:28 by saksoy           ###   ########.fr        #
+#    Updated: 2022/06/29 03:10:49 by saksoy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CFLAGSS = -Wall -Wextra -Werror
-SRCS = helper_func.c	main.c	set_struct.c
+SRCS = helper_func.c	main.c	set_struct.c	push.c	swap.c	rotate.c reverse_rotate.c	control.c
 OBJS = $(SRCS:.c=.o)
 NAME = push_swap
 CC = gcc
@@ -31,6 +31,8 @@ $(LIB) :
 
 clean:
 	rm -rf $(OBJS) $(NAME)
+
+fclean: clean
 	make fclean -sC ./libft
 
 re: clean all

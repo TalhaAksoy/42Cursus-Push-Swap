@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:00:02 by saksoy            #+#    #+#             */
-/*   Updated: 2022/06/28 19:16:42 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/06/29 03:11:44 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 void	exit_swap(t_swap	*index)
 {
-	free(index->stack_a);
-	free(index->stack_b);
-	free(index);
+	(void)index;
+	exit(0);
 }
 
 void	free_list(char **list)
@@ -39,6 +38,7 @@ t_swap	*init(char **argv)
 	len = 0;
 	str = get_argv(argv);
 	arr = ft_split(str, ' ');
+	check_all_num(str);
 	while (arr[len])
 		len++;
 	swap = ft_calloc(1, sizeof(t_swap));
@@ -51,14 +51,20 @@ t_swap	*init(char **argv)
 	return (swap);
 }
 
+void	error_control(t_swap	*index)
+{
+	check_sorted(index);
+	check_repeat(index);
+}
+
 int	main(int argc, char **argv)
 {
 	t_swap	*index;
 
-	if (argc > 2)
+	if (argc > 1)
 	{
 		index = init(argv);
-		print_stack(index);
+		error_control(index);
 	}
 	else
 	{
