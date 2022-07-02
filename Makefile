@@ -6,12 +6,12 @@
 #    By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 17:01:00 by saksoy            #+#    #+#              #
-#    Updated: 2022/06/29 03:10:49 by saksoy           ###   ########.fr        #
+#    Updated: 2022/07/02 18:35:02 by saksoy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CFLAGSS = -Wall -Wextra -Werror
-SRCS = helper_func.c	main.c	set_struct.c	push.c	swap.c	rotate.c reverse_rotate.c	control.c
+SRCS = helper_func.c	main.c	set_struct.c	push.c	swap.c	rotate.c reverse_rotate.c	control.c	radix.c
 OBJS = $(SRCS:.c=.o)
 NAME = push_swap
 CC = gcc

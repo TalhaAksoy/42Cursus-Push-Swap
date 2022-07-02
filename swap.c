@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
+/*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 23:45:22 by saksoy            #+#    #+#             */
-/*   Updated: 2022/06/29 00:13:22 by akocabas         ###   ########.fr       */
+/*   Updated: 2022/07/02 19:09:59 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	swap_a(t_swap	*index)
 {
 	int	temp;
 
+	if (index->a_len < 2)
+		return ;
 	temp = index->stack_a[index->a_len - 1];
 	index->stack_a[index->a_len - 1] = index->stack_a[index->a_len - 2];
 	index->stack_a[index->a_len - 2] = temp;
@@ -26,6 +28,8 @@ void	swap_b(t_swap	*index)
 {
 	int	temp;
 
+	if (index->b_len < 2)
+		return ;
 	temp = index->stack_b[index->b_len - 1];
 	index->stack_b[index->b_len - 1] = index->stack_b[index->b_len - 2];
 	index->stack_b[index->b_len - 2] = temp;
@@ -36,6 +40,8 @@ void	swap_ss(t_swap	*index)
 {
 	int	temp;
 
+	if (index->a_len < 2 || index->b_len < 2)
+		return ;
 	temp = index->stack_a[index->a_len - 1];
 	index->stack_a[index->a_len - 1] = index->stack_a[index->a_len - 2];
 	index->stack_a[index->a_len - 2] = temp;
