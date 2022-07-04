@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 15:59:11 by saksoy            #+#    #+#             */
-/*   Updated: 2022/07/02 18:34:18 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/07/04 12:47:09 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,14 @@ typedef struct s_swap
 {
 	int	*stack_a;
 	int	*stack_b;
+	int	*sorted;
 	int	a_len;
 	int	b_len;
 }t_swap;
 
 void	print_stack_a(t_swap *index);
 void	print_stack_b(t_swap *index);
+void	print_stack_sorted(t_swap *index);
 void	push_b(t_swap *index);
 void	push_a(t_swap *index);
 void	exit_swap(t_swap	*index);
@@ -48,5 +50,6 @@ void	check_repeat(t_swap	*index);
 void	error_control(t_swap	*index);
 void	check_all_num(char	*str);
 void	radix_sort(t_swap *index);
+void	bg_sort_min(t_swap *index);
 
 #endif

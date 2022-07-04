@@ -1,52 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   helper_func.c                                      :+:      :+:    :+:   */
+/*   buble.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/22 16:35:44 by saksoy            #+#    #+#             */
-/*   Updated: 2022/07/04 11:44:21 by saksoy           ###   ########.fr       */
+/*   Created: 2022/07/04 12:44:52 by saksoy            #+#    #+#             */
+/*   Updated: 2022/07/04 15:30:28 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_stack_a(t_swap *index)
+void	bg_sort_min(t_swap *index)
 {
 	int	i;
+	int	temp;
+	int	len;
 
-	i = index->a_len;
-	while (i > 0)
+	i = 0;
+	len = index->a_len;
+	while (i < len)
 	{
-		printf("a[%d] => %d\n", i - 1,
-			index->stack_a[i - 1]);
-		i--;
+		index->sorted[i] = index->stack_a[i];
+		i++;
 	}
-}
-
-void	print_stack_b(t_swap *index)
-{
-	int	i;
-
-	i = index->b_len;
-	while (i > 0)
+	i = 0;
+	while (i < len - 1)
 	{
-		printf("b[%d] => %d\n", i - 1,
-			index->stack_b[i - 1]);
-		i--;
-	}
-}
-
-void	print_stack_sorted(t_swap *index)
-{
-	int	i;
-
-	i = index->a_len;
-	while (i > 0)
-	{
-		printf("sorted[%d] => %d\n", i - 1,
-			index->sorted[i - 1]);
-		i--;
+		if (index->sorted[i] > index->sorted[i + 1])
+		{
+			temp = index->sorted[i];
+			index->sorted[i] = index->sorted[i + 1];
+			index->sorted[i + 1] = temp;
+			i = -1;
+		}
+		i++;
 	}
 }

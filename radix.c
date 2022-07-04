@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 13:25:56 by saksoy            #+#    #+#             */
-/*   Updated: 2022/07/02 19:07:58 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/07/04 15:44:35 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,16 @@ int	get_max_bits(t_swap *index)
 	return (max_bits);
 }
 
+int	find_idx(int idx_nbr, t_swap *index)
+{
+	int	i;
+
+	i = 0;
+	while (idx_nbr != index->sorted[i])
+		i++;
+	return (i);
+}
+
 void	radix_sort(t_swap *index)
 {
 	int		i;
@@ -40,27 +50,22 @@ void	radix_sort(t_swap *index)
 	int		max_bits;
 
 	i = 0;
-	size = index->a_len - 1;
-	//size = 7;
-	//max_bits = get_max_bits(index);
-	max_bits = 7;
-	printf("%d => size, %d => max_bits\n", size, max_bits);
-	while (i < 5)
+	bg_sort_min(index);
+	size = index->a_len;
+	max_bits = get_max_bits(index);
+	while (i < max_bits)
 	{
 		j = 0;
-		while (j < 7)
+		while (j < size)
 		{
-			if (((index->stack_a[j] >> i) & 1))
+			if ((find_idx(index->stack_a[0], index) >> i) & 1)
 				rotate_a(index);
 			else
 				push_b(index);
 			j++;
 		}
-		printf("%d b_len\n",index->b_len);
-		while (index->b_len != 0)
-		{
+		while (index->b_len)
 			push_a(index);
-		}
 		i++;
 	}
 }

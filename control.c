@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   control.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akocabas <akocabas@student.42istanbul.c    +#+  +:+       +#+        */
+/*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/29 01:02:17 by akocabas          #+#    #+#             */
-/*   Updated: 2022/06/29 01:58:444 by akocabas         ###   ########.fr       */
+/*   Created: 2022/07/04 12:52:58 by saksoy            #+#    #+#             */
+/*   Updated: 2022/07/04 12:53:44 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,9 @@ void	check_all_num(char *str)
 	int		i;
 
 	i = 0;
-
 	while (str[i])
 	{
-		if (ft_isdigit(str[i]) || (str[i] == ' '))
+		if (ft_isdigit(str[i]) || (str[i] == ' ') || (str[i] == '-'))
 			++i;
 		else
 		{

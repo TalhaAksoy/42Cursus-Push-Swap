@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:00:02 by saksoy            #+#    #+#             */
-/*   Updated: 2022/07/02 18:57:22 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/07/04 15:28:04 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ t_swap	*init(char **argv)
 	swap = ft_calloc(1, sizeof(t_swap));
 	swap->stack_a = malloc(sizeof(int) * len);
 	swap->stack_b = malloc(sizeof(int) * len);
+	swap->sorted = malloc(sizeof(int) * len);
 	swap->a_len = len;
 	set_values(str, swap);
 	free_list(arr);
@@ -65,7 +66,6 @@ int	main(int argc, char **argv)
 	{
 		index = init(argv);
 		error_control(index);
-		print_stack_a(index);
 		radix_sort(index);
 		print_stack_a(index);
 	}

@@ -6,12 +6,12 @@
 #    By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 17:01:00 by saksoy            #+#    #+#              #
-#    Updated: 2022/07/02 18:35:02 by saksoy           ###   ########.fr        #
+#    Updated: 2022/07/04 13:28:08 by saksoy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CFLAGSS = -Wall -Wextra -Werror
-SRCS = helper_func.c	main.c	set_struct.c	push.c	swap.c	rotate.c reverse_rotate.c	control.c	radix.c
+SRCS = helper_func.c	main.c	set_struct.c	push.c	swap.c	rotate.c reverse_rotate.c	control.c	radix.c	buble.c
 OBJS = $(SRCS:.c=.o)
 NAME = push_swap
 CC = gcc
@@ -36,5 +36,9 @@ fclean: clean
 	make fclean -sC ./libft
 
 re: clean all
+
+norm:
+	@norminette *.[ch]
+	@norminette ./libft/*.[ch]
 
 .PHONY: clean re
