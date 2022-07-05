@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 12:52:58 by saksoy            #+#    #+#             */
-/*   Updated: 2022/07/04 12:53:44 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/07/05 03:39:42 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,22 @@ int	check_sorted(t_swap *index)
 void	check_repeat(t_swap	*index)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	while (i < index->a_len - 1)
+	while (i < index->a_len)
 	{
-		if (index->stack_a[i] != index->stack_a[i + 1])
-			++i;
-		else
+		j = i + 1;
+		while (j < index->a_len)
 		{
-			write(1, "Found Repeated Number\n", 23);
-			exit_swap(index);
+			if (index->stack_a[i] == index->stack_a[j])
+			{
+				write(1, "Repeat argument\n", 17);
+				exit_swap(index);
+			}
+			j++;
 		}
+		i++;
 	}
 }
 

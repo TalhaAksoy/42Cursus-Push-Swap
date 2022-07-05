@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 13:25:56 by saksoy            #+#    #+#             */
-/*   Updated: 2022/07/04 15:44:35 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/07/05 04:04:25 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,13 @@ void	radix_sort(t_swap *index)
 		j = 0;
 		while (j < size)
 		{
-			if ((find_idx(index->stack_a[0], index) >> i) & 1)
+			if ((find_idx(index->stack_a[index->a_len - 1], index) >> i) & 1)
 				rotate_a(index);
 			else
 				push_b(index);
 			j++;
 		}
-		while (index->b_len)
+		while (index->b_len != 0)
 			push_a(index);
 		i++;
 	}
