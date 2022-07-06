@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:00:02 by saksoy            #+#    #+#             */
-/*   Updated: 2022/07/05 03:16:14 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/07/06 12:54:49 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ int	main(int argc, char **argv)
 		index = init(argv);
 		error_control(index);
 		radix_sort(index);
-		print_stack_a(index);
 	}
 	else
 	{

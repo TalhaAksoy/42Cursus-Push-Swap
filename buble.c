@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 12:44:52 by saksoy            #+#    #+#             */
-/*   Updated: 2022/07/05 03:46:28 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/07/06 12:47:01 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	bg_sort_min(t_swap *index)
 		i++;
 	}
 	i = 0;
-	printf("\n");
 	while (i < len - 1)
 	{
 		if (index->sorted[i] > index->sorted[i + 1])
