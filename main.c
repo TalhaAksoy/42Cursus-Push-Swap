@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:00:02 by saksoy            #+#    #+#             */
-/*   Updated: 2022/07/06 12:54:49 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/07/06 20:05:47 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 void	exit_swap(t_swap	*index)
 {
-	(void)index;
+	free(index->stack_a);
+	free(index->stack_b);
+	free(index->sorted);
+	free(index);
 	exit(0);
 }
 
@@ -45,11 +48,25 @@ t_swap	*init(char **argv)
 	swap->stack_a = malloc(sizeof(int) * len);
 	swap->stack_b = malloc(sizeof(int) * len);
 	swap->sorted = malloc(sizeof(int) * len);
+	swap->sorted_inx = malloc(sizeof(int) * len);
 	swap->a_len = len;
 	set_values(str, swap);
 	free_list(arr);
 	free(str);
 	return (swap);
+}
+
+void	print_stack_inx(t_swap *index)
+{
+	int	i;
+
+	i = index->a_len;
+	while (i > 0)
+	{
+		printf("sorted[%d] => %d\n", i - 1,
+			index->sorted_inx[i - 1]);
+		i--;
+	}
 }
 
 void	error_control(t_swap	*index)
@@ -62,6 +79,7 @@ int	main(int argc, char **argv)
 {
 	t_swap	*index;
 
+	index = ft_calloc(1, sizeof(t_swap));
 	if (argc > 1)
 	{
 		index = init(argv);

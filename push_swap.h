@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 15:59:11 by saksoy            #+#    #+#             */
-/*   Updated: 2022/07/06 12:45:31 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/07/06 19:52:13 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_swap
 	int	*stack_a;
 	int	*stack_b;
 	int	*sorted;
+	int	*sorted_inx;
 	int	a_len;
 	int	b_len;
 }t_swap;
