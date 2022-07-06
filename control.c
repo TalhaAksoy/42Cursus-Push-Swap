@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 12:52:58 by saksoy            #+#    #+#             */
-/*   Updated: 2022/07/05 03:39:42 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/07/06 20:39:59 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	check_repeat(t_swap	*index)
 	}
 }
 
-void	check_all_num(char *str)
+void	check_all_num(char *str, t_swap *index)
 {
 	int		i;
 
@@ -63,7 +63,7 @@ void	check_all_num(char *str)
 		else
 		{
 			write(1, "Invalid paramater\n", 19);
-			exit_swap((t_swap *)str);
+			exit_swap(index);
 		}
 	}
 }

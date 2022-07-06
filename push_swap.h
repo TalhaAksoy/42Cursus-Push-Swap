@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 15:59:11 by saksoy            #+#    #+#             */
-/*   Updated: 2022/07/06 19:52:13 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/07/06 20:39:45 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	reverse_rotate_r(t_swap *index);
 int		check_sorted(t_swap *index);
 void	check_repeat(t_swap	*index);
 void	error_control(t_swap	*index);
-void	check_all_num(char	*str);
+void	check_all_num(char	*str, t_swap *index);
 void	radix_sort(t_swap *index);
 void	bg_sort_min(t_swap *index);
 void	find_idx(t_swap *index);

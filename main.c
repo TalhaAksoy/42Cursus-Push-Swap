@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:00:02 by saksoy            #+#    #+#             */
-/*   Updated: 2022/07/06 20:05:47 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/07/06 20:53:08 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	exit_swap(t_swap	*index)
 	free(index->stack_a);
 	free(index->stack_b);
 	free(index->sorted);
+	free(index->sorted_inx);
 	free(index);
 	exit(0);
 }
@@ -41,7 +42,6 @@ t_swap	*init(char **argv)
 	len = 0;
 	str = get_argv(argv);
 	arr = ft_split(str, ' ');
-	check_all_num(str);
 	while (arr[len])
 		len++;
 	swap = ft_calloc(1, sizeof(t_swap));
@@ -53,20 +53,8 @@ t_swap	*init(char **argv)
 	set_values(str, swap);
 	free_list(arr);
 	free(str);
+	check_all_num(str, swap);
 	return (swap);
-}
-
-void	print_stack_inx(t_swap *index)
-{
-	int	i;
-
-	i = index->a_len;
-	while (i > 0)
-	{
-		printf("sorted[%d] => %d\n", i - 1,
-			index->sorted_inx[i - 1]);
-		i--;
-	}
 }
 
 void	error_control(t_swap	*index)
@@ -79,7 +67,6 @@ int	main(int argc, char **argv)
 {
 	t_swap	*index;
 
-	index = ft_calloc(1, sizeof(t_swap));
 	if (argc > 1)
 	{
 		index = init(argv);
@@ -91,6 +78,7 @@ int	main(int argc, char **argv)
 		write(2, "İnvalid Argument\n", 19);
 		return (0);
 	}
+	system("leaks push_swap");
 	exit_swap(index);
 	return (0);
 }
