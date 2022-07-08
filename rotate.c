@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 23:46:08 by saksoy            #+#    #+#             */
-/*   Updated: 2022/07/06 17:19:06 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/07/08 14:56:47 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	rotate_b(t_swap	*index)
 		index->stack_b[i] = index->stack_b[i - 1];
 		index->stack_b[i - 1] = temp;
 	}
-	write(1, "rb\n", 4);
+	write(1, "rb\n", 3);
 }
 
 void	rotate_r(t_swap	*index)
@@ -65,5 +65,5 @@ void	rotate_r(t_swap	*index)
 		index->stack_b[i] = index->stack_b[i - 1];
 		index->stack_b[i - 1] = temp;
 	}
-	write(1, "rr\n", 4);
+	write(1, "rr\n", 3);
 }

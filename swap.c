@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 23:45:22 by saksoy            #+#    #+#             */
-/*   Updated: 2022/07/02 19:09:59 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/07/08 14:57:44 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	swap_a(t_swap	*index)
 	temp = index->stack_a[index->a_len - 1];
 	index->stack_a[index->a_len - 1] = index->stack_a[index->a_len - 2];
 	index->stack_a[index->a_len - 2] = temp;
-	write(1, "sa\n", 4);
+	write(1, "sa\n", 3);
 }
 
 void	swap_b(t_swap	*index)
@@ -33,7 +33,7 @@ void	swap_b(t_swap	*index)
 	temp = index->stack_b[index->b_len - 1];
 	index->stack_b[index->b_len - 1] = index->stack_b[index->b_len - 2];
 	index->stack_b[index->b_len - 2] = temp;
-	write(1, "sb\n", 4);
+	write(1, "sb\n", 3);
 }
 
 void	swap_ss(t_swap	*index)
@@ -48,5 +48,5 @@ void	swap_ss(t_swap	*index)
 	temp = index->stack_b[index->b_len - 1];
 	index->stack_b[index->b_len - 1] = index->stack_b[index->b_len - 2];
 	index->stack_b[index->b_len - 2] = temp;
-	write(1, "ss\n", 4);
+	write(1, "ss\n", 3);
 }

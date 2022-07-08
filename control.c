@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 12:52:58 by saksoy            #+#    #+#             */
-/*   Updated: 2022/07/06 20:39:59 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/07/08 15:19:59 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,22 @@ int	check_sorted(t_swap *index)
 		else
 			return (0);
 	}
-	write(1, "All varraible are sorted\n", 26);
 	exit_swap(index);
+	return (1);
+}
+
+int	check_sorted_rdx(t_swap *index)
+{
+	int	i;
+
+	i = 0;
+	while (i < index->a_len - 1)
+	{
+		if (index->stack_a[i] > index->stack_a[i + 1])
+			++i;
+		else
+			return (0);
+	}
 	return (1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/28 23:07:07 by saksoy            #+#    #+#             */
-/*   Updated: 2022/06/28 23:44:58 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/07/08 15:11:13 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	push_b(t_swap *index)
 {
 	if (index->a_len <= 0)
 	{
-		write(1, "A stack empty\n", 15);
 		exit(1);
 	}
 	index->b_len++;
@@ -30,7 +29,6 @@ void	push_a(t_swap *index)
 {
 	if (index->b_len <= 0)
 	{
-		write(1, "B stack empty\n", 15);
 		exit(1);
 	}
 	index->a_len++;

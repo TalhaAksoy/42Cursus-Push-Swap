@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:00:02 by saksoy            #+#    #+#             */
-/*   Updated: 2022/07/06 20:53:08 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/07/08 15:01:25 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ int	main(int argc, char **argv)
 		write(2, "İnvalid Argument\n", 19);
 		return (0);
 	}
-	system("leaks push_swap");
 	exit_swap(index);
 	return (0);
 }
