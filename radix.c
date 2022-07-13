@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 13:25:56 by saksoy            #+#    #+#             */
-/*   Updated: 2022/07/08 15:19:37 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/07/13 16:47:31 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,28 @@ void	find_idx(t_swap *index)
 		index->stack_a[i] = index->sorted_inx[i];
 }
 
+void	radix_sub_one(t_swap *index, int i)
+{
+	if (check_sorted_rdx(index) == 0)
+	{
+		if (((index->stack_a[index->a_len - 1] >> i) & 1) == 0)
+			push_b(index);
+		else
+			rotate_a(index);
+	}
+}
+
+void	radix_sub_two(t_swap *index, int i, int b_size, int max_bits)
+{
+	while (b_size-- && i <= max_bits)
+	{
+		if (((index->stack_b[index->b_len - 1] >> i) & 1) == 0)
+			rotate_b(index);
+		else
+			push_a(index);
+	}
+}
+
 void	radix_sort(t_swap *index)
 {
 	int		i;
@@ -68,24 +90,12 @@ void	radix_sort(t_swap *index)
 		j = 0;
 		while (j < size)
 		{
-			if (check_sorted_rdx(index) == 0)
-			{
-				if (((index->stack_a[index->a_len - 1] >> i) & 1) == 0)
-					push_b(index);
-				else
-					rotate_a(index);
-			}
+			radix_sub_one(index, i);
 			j++;
 		}
 		i++;
 		b_size = index->b_len;
-		while (b_size-- && i <= max_bits)
-		{
-			if (((index->stack_b[index->b_len - 1] >> i) & 1) == 0)
-				rotate_b(index);
-			else
-				push_a(index);
-		}
+		radix_sub_two(index, i, b_size, max_bits);
 	}
 	while (index->b_len)
 		push_a(index);
