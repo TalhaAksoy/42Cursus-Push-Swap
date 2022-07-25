@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 19:47:07 by saksoy            #+#    #+#             */
-/*   Updated: 2022/07/25 20:55:21 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/07/25 21:41:08 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,5 @@ void	four_sort(t_swap *index)
 	place = finder(index);
 	four_sort_in(index, i, place);
 	if (index->b_len == 0)
-	{
-		print_stack_a(index);
 		exit_swap(index);
-	}
 }

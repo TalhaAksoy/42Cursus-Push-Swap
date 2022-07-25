@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 19:28:43 by saksoy            #+#    #+#             */
-/*   Updated: 2022/07/25 19:57:36 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/07/25 21:41:00 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,5 @@ void	three_sort(t_swap *index)
 	if (check_sorted_rdx(index) == 0)
 		three_sort(index);
 	if (index->b_len == 0)
-	{
-		print_stack_a(index);
 		exit_swap(index);
-	}
 }

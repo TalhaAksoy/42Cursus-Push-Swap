@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 15:59:11 by saksoy            #+#    #+#             */
-/*   Updated: 2022/07/25 20:22:52 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/07/25 21:40:24 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,6 @@ typedef struct s_swap
 	int	b_len;
 }t_swap;
 
-void	print_stack_a(t_swap *index);
-void	print_stack_b(t_swap *index);
-void	print_stack_sorted(t_swap *index);
 void	push_b(t_swap *index);
 void	push_a(t_swap *index);
 void	exit_swap(t_swap	*index);
