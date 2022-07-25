@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 12:52:58 by saksoy            #+#    #+#             */
-/*   Updated: 2022/07/08 15:19:59 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/07/25 12:19:34 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	check_sorted(t_swap *index)
 		else
 			return (0);
 	}
+	write(1, "all varaible sorted", 20);
 	exit_swap(index);
 	return (1);
 }
