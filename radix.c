@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 13:25:56 by saksoy            #+#    #+#             */
-/*   Updated: 2022/07/13 16:47:31 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/07/25 19:56:26 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,8 +81,6 @@ void	radix_sort(t_swap *index)
 	int		max_bits;
 
 	i = 0;
-	bg_sort_min(index);
-	find_idx(index);
 	max_bits = get_max_bits(index);
 	while (i <= max_bits)
 	{

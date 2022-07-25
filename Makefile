@@ -6,16 +6,18 @@
 #    By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/22 17:01:00 by saksoy            #+#    #+#              #
-#    Updated: 2022/07/06 21:01:33 by saksoy           ###   ########.fr        #
+#    Updated: 2022/07/25 20:21:48 by saksoy           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CFLAGSS = -Wall -Wextra -Werror
-SRCS = helper_func.c	main.c	set_struct.c	push.c	swap.c	rotate.c reverse_rotate.c	control.c	radix.c	buble.c
+SRCS = helper_func.c	main.c	set_struct.c	push.c	swap.c	rotate.c reverse_rotate.c	control.c	radix.c	buble.c	./arg_sorted/three_arg_sort.c ./arg_sorted/four_arg_sort.c ./arg_sorted/five_arg_sort.c
 OBJS = $(SRCS:.c=.o)
 NAME = push_swap
 CC = gcc
 LIB = ./libft/libft.a
+S = 0
+E = 100
 
 all: $(NAME)
 
@@ -41,4 +43,7 @@ norm:
 	@norminette *.[ch]
 	@norminette ./libft/*.[ch]
 
-.PHONY: clean re
+vis: re
+	python3 pyviz.py `ruby -e "puts ($(S)..$(E)).to_a.shuffle.join(' ')"`
+
+.PHONY: clean re fclean norm all vis

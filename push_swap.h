@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 15:59:11 by saksoy            #+#    #+#             */
-/*   Updated: 2022/07/08 15:19:32 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/07/25 20:22:52 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,8 @@ void	check_all_num(char	*str, t_swap *index);
 void	radix_sort(t_swap *index);
 void	bg_sort_min(t_swap *index);
 void	find_idx(t_swap *index);
+void	three_sort(t_swap *index);
+void	four_sort(t_swap *index);
+void	five_sort(t_swap *index);
 
 #endif
