@@ -6,11 +6,11 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/25 20:06:36 by saksoy            #+#    #+#             */
-/*   Updated: 2022/07/25 21:41:13 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/07/27 13:19:23 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 int	finder2(t_swap	*index)
 {
