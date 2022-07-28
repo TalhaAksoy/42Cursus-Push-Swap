@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 12:52:58 by saksoy            #+#    #+#             */
-/*   Updated: 2022/07/25 20:05:20 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/07/28 14:54:56 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,21 @@ void	check_repeat(t_swap	*index)
 		{
 			if (index->stack_a[i] == index->stack_a[j])
 			{
-				write(1, "Repeat argument\n", 17);
+				write(2, "Error\n", 6);
 				exit_swap(index);
 			}
 			j++;
 		}
 		i++;
 	}
+}
+
+int	is_valid(char *str)
+{
+	return ((str[0] == '+' && (str[1] == '+' || str[1] == '-'))
+		|| (str[0] == '-' && (str[1] == '+' || str[1] == '-'))
+		|| (str[0] == '+' && !ft_isdigit(str[1]))
+		|| (str[0] == '-' && !ft_isdigit(str[1])));
 }
 
 void	check_all_num(char *str, t_swap *index)
@@ -72,11 +80,14 @@ void	check_all_num(char *str, t_swap *index)
 	i = 0;
 	while (str[i])
 	{
-		if (ft_isdigit(str[i]) || (str[i] == ' ') || (str[i] == '-'))
-			++i;
+		if (ft_isdigit(str[i]) || (str[i] == ' ')
+			|| !(is_valid(&str[i])))
+		{
+				++i;
+		}
 		else
 		{
-			write(1, "Invalid paramater\n", 19);
+			write(2, "Error\n", 6);
 			exit_swap(index);
 		}
 	}

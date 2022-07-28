@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 00:38:54 by saksoy            #+#    #+#             */
-/*   Updated: 2022/07/06 20:48:55 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/07/28 16:03:33 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*get_argv(char **argv)
 	int		j;
 
 	i = 0;
-	ret = ft_calloc(999, sizeof(char *));
+	ret = ft_calloc(2023, sizeof(char *));
 	while (argv[++i])
 	{
 		splitted = ft_split(argv[i], ' ');
@@ -55,7 +55,7 @@ static void	nbr_cntrl(char *str, t_swap *index)
 			break ;
 		if (!(str[i] >= '0' && str[i] <= '9') && !(str[i] == ' '))
 		{
-			write(1, "Hata var Knk SG\n", 17);
+			write(2, "Error\n", 6);
 			exit_swap(index);
 		}
 	}
@@ -69,7 +69,7 @@ void	set_values(char *str, t_swap *index)
 
 	spt = ft_split(str, ' ');
 	i = 0;
-	while (i < index->a_len - 1)
+	while (i <= index->a_len - 1)
 		nbr_cntrl(spt[i++], index);
 	i = 0;
 	j = 0;
@@ -77,6 +77,12 @@ void	set_values(char *str, t_swap *index)
 		i++;
 	while (spt[--i])
 	{
+		if (ft_atol(spt[i], index) > 2147483647
+			|| ft_atol(spt[i], index) < -2147483648)
+		{
+			write(2, "Error\n", 6);
+			exit_swap(index);
+		}
 		index->stack_a[j] = ft_atoi(spt[i]);
 		j++;
 	}

@@ -6,7 +6,7 @@
 /*   By: saksoy <saksoy@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 15:59:11 by saksoy            #+#    #+#             */
-/*   Updated: 2022/07/27 12:10:11 by saksoy           ###   ########.fr       */
+/*   Updated: 2022/07/28 15:24:21 by saksoy           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,7 @@ void	find_idx(t_swap *index);
 void	three_sort(t_swap *index);
 void	four_sort(t_swap *index);
 void	five_sort(t_swap *index);
+void	one_arg(t_swap *index);
+long	ft_atol(const char *str, t_swap *index);
 
 #endif
